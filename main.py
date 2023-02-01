@@ -11,3 +11,13 @@ def pontOsszeg(lista: list[int]) -> int:
         osszeg += ertek
     return osszeg
 # teszteset
+def jatekos_vesztett_teszt():
+    jatekosPontok: list[int] = [11, 11]
+    gepPontok: list[int] = [11, 10]
+
+    print(eredmeny(jatekosPontok, gepPontok))
+
+def tesztek():
+    jatekos_vesztett_teszt()
+
+tesztek()
