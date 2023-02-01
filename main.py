@@ -1,4 +1,4 @@
 # megoldás
-def metodus():
+def eredmeny():
     pass
 # teszteset
