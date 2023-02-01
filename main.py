@@ -15,9 +15,40 @@ def jatekos_vesztett_teszt():
     jatekosPontok: list[int] = [11, 11]
     gepPontok: list[int] = [11, 10]
 
-    print(eredmeny(jatekosPontok, gepPontok))
+    kapott: str = eredmeny(jatekosPontok, gepPontok)
+    vart: str = "Játékos veszített"
+    if kapott == vart:
+        print("A teszteset sikeres!")
+    else:
+        print("A teszteset sikertelen!")
+
+def gep_vesztett_teszt():
+    jatekosPontok: list[int] = [11, 10]
+    gepPontok: list[int] = [11, 11]
+
+    kapott: str = eredmeny(jatekosPontok, gepPontok)
+    vart: str = "Gép veszített"
+    if kapott == vart:
+        print("A teszteset sikeres!")
+    else:
+        print("A teszteset sikertelen!")
+
+def dontetlen():
+    jatekosPontok: list[int] = [11, 10]
+    gepPontok: list[int] = [11, 10]
+
+    kapott: str = eredmeny(jatekosPontok, gepPontok)
+    vart: str = "Döntetlen"
+    if kapott == vart:
+        print("A teszteset sikeres!")
+    else:
+        print("A teszteset sikertelen!")
+
 
 def tesztek():
     jatekos_vesztett_teszt()
+    gep_vesztett_teszt()
+    dontetlen()
+
 
 tesztek()
