@@ -96,6 +96,18 @@ def dontetlen_teszt():
     else:
         print("A teszteset sikertelen!")
 
+def dontetlen_teszt2():
+    jatekosPontok: list[int] = [11, 5, 6]
+    gepPontok: list[int] = [11, 6, 5]
+
+    print("Teszteset 8. [Döntetlen | Túlcsorbul mindkettő]\n\t", end="")
+    kapott: str = eredmeny(jatekosPontok, gepPontok)
+    vart: str = "Döntetlen"
+    if kapott == vart:
+        print("A teszteset sikeres!")
+    else:
+        print("A teszteset sikertelen!")
+
 
 def tesztek():
     jatekos_vesztett_teszt()
@@ -105,6 +117,7 @@ def tesztek():
     gep_vesztett_teszt2()
     gep_vesztett_teszt3()
     dontetlen_teszt()
+    dontetlen_teszt2()
 
 
 tesztek()
