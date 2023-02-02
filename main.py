@@ -1,15 +1,42 @@
 # megoldás
 def eredmeny(jatekosPontjai: list[int], gepPontjai: list[int]) -> str:
-    if pontOsszeg(jatekosPontjai) > 21:
-        return "Játékos veszített"
-    elif pontOsszeg(gepPontjai) > 21:
-        return "Gép veszített"
+    jP: int = pontOsszeg(jatekosPontjai)
+    gP: int = pontOsszeg(gepPontjai)
+    jDb: int = lapDb(jatekosPontjai)
+    gDb: int = lapDb(gepPontjai)
+    s: str = ""
+
+    if (jP <= 21) and (gP <= 21):
+        if jP > gP:
+            s = "Gép veszített"
+        elif gP > jP:
+            s = "Játékos veszített"
+        elif gP == jP:
+            if jDb < gDb:
+                s = "Gép veszített"
+            elif jDb > gDb:
+                s = "Játékos veszített"
+            else:
+                s = "Döntetlen"
+    else:
+        if jP > 21:
+            s = "Játékos veszített"
+        if gP > 21:
+            s = "Gép veszített"
+        if (jP > 21) and (gP > 21):
+            s = "Döntetlen"
+
+    return s
+
 
 def pontOsszeg(lista: list[int]) -> int:
     osszeg = 0
     for ertek in lista:
         osszeg += ertek
     return osszeg
+
+def lapDb(lista: list[int]) -> int:
+    return len(lista)
 # teszteset
 def jatekos_vesztett_teszt():
     jatekosPontok: list[int] = [11, 11]
